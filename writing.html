@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Writing - Namyeon Lee</title>
+  <title>Writing | Namyeon Lee</title>
+
   <meta
     name="description"
-    content="Personal writing - Namyeon Lee"
+    content="Writing - Namyeon Lee, Assistant Professor of Public Relations at UNC Pembroke"
   />
 
   <link
@@ -43,37 +41,40 @@
       }
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     html,
     body {
-      height: 100%;
+      min-height: 100%;
     }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg-color);
+      background-color: var(--bg-color);
       color: var(--text-color);
       margin: 0;
-
-      padding:
-        calc(clamp(2rem, 6vh, 7rem) + env(safe-area-inset-top, 0px))
-        1rem
-        calc(3.5rem + env(safe-area-inset-bottom, 0px));
-
-      display: block;
-      text-align: center;
-      box-sizing: border-box;
+      padding: 2rem 1rem;
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 680px;
-      width: 100%;
+      max-width: 760px;
       margin: 0 auto;
     }
 
     h1 {
       font-size: 2rem;
-      margin: .6rem 0;
+      margin: 0 0 .4rem;
+      text-align: center;
       font-weight: 600;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 2.2rem;
+      margin-bottom: .8rem;
     }
 
     a {
@@ -87,13 +88,12 @@
       text-decoration: underline;
     }
 
-    /* 상단 탭 */
     .links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: .5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2.5rem;
     }
 
     .links a {
@@ -101,43 +101,57 @@
       border: 1px solid var(--border-color);
       border-radius: 6px;
       font-weight: 500;
-      transition: background-color .2s;
     }
 
     .links a:hover {
       background-color: var(--border-color);
     }
 
-    /* Writing content */
-    .section {
-      margin: 1.25rem auto 0;
-      max-width: 520px;
-      width: 100%;
-      text-align: left;
+    .writing-content {
+      text-align: center;
+      margin-top: 3rem;
     }
 
-    .section h2 {
-      font-size: 1.1rem;
-      color: var(--accent-color);
-      margin: .2rem 0 .8rem;
+    .writing-content p {
+      margin: .5rem 0;
     }
 
-    .lead {
-      margin: .2rem 0 1rem;
-      line-height: 1.7;
-    }
-
-    .blog-link {
+    .writing-link {
       display: inline-block;
-      margin-top: .4rem;
-      font-weight: 600;
+      margin-top: 1rem;
+      padding: .5rem .8rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .writing-link:hover {
+      background-color: var(--border-color);
+    }
+
+    .tmi {
+      margin-top: 2rem;
+      font-size: .9rem;
+      color: var(--muted);
+      font-style: italic;
+      text-align: center;
     }
 
     footer {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       font-size: .85rem;
       color: var(--muted);
-      padding-bottom: .5rem;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -150,9 +164,7 @@
 
     <nav class="links" aria-label="Primary">
 
-      <a href="index.html">
-        Home
-      </a>
+      <a href="index.html">Home</a>
 
       <a
         href="Namyeon_Lee_CV.pdf"
@@ -162,13 +174,9 @@
         CV
       </a>
 
-      <a href="teaching.html">
-        Teaching
-      </a>
+      <a href="teaching.html">Teaching</a>
 
-      <a href="research.html">
-        Research
-      </a>
+      <a href="research.html">Research</a>
 
       <a
         href="https://scholar.google.com/citations?user=e9AxEE4AAAAJ&hl=en"
@@ -178,29 +186,30 @@
         Google Scholar
       </a>
 
-      <a href="writing.html">
-        Writing
-      </a>
+      <a href="writing.html">Writing</a>
 
     </nav>
 
-    <section class="section">
+    <section class="writing-content">
 
-      <p class="lead">
-        Outside of my academic work, I keep a personal blog in Korean about
-        everyday life and things I want to remember.
+      <h2>Writing</h2>
+
+      <p>
+        Personal writing, notes, and occasional thoughts outside academic work.
       </p>
 
       <a
-        class="blog-link"
+        class="writing-link"
         href="https://honeycrisps.tistory.com/"
         target="_blank"
         rel="noopener"
       >
-        Read my blog →
+        honeycrisps
       </a>
 
     </section>
+
+    <div class="tmi" id="tmi-box">🍅</div>
 
     <footer>
       &copy; <span id="year"></span> Namyeon Lee
