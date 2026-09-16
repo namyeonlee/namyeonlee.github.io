@@ -127,15 +127,6 @@
       background-color: var(--border-color);
     }
 
-    .links a.disabled {
-      pointer-events: none;
-      cursor: default;
-      opacity: .55;
-      border-style: dashed;
-      text-decoration: none;
-      background: transparent;
-    }
-
     .news {
       margin: 1.25rem auto 0;
       max-width: 520px;
@@ -252,19 +243,15 @@
       </a>
 
       <a
-        href="https://honeycrisps.tistory.com/"
-        target="_blank"
-        rel="noopener"
-      >
-        Writing
-      </a>
-
-      <a
         href="https://scholar.google.com/citations?user=e9AxEE4AAAAJ&hl=en"
         target="_blank"
         rel="noopener"
       >
         Google Scholar
+      </a>
+
+      <a href="writing.html">
+        Writing
       </a>
 
     </nav>
@@ -346,18 +333,6 @@
   <script>
     document.getElementById('year').textContent =
       new Date().getFullYear();
-
-    const tmis = [''];
-
-    const tmiBox =
-      document.getElementById('tmi-box');
-
-    const selectedTmi =
-      tmis[Math.floor(Math.random() * tmis.length)];
-
-    if (selectedTmi.trim()) {
-      tmiBox.textContent = `🍅 ${selectedTmi}`;
-    }
   </script>
 
 </body>
