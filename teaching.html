@@ -7,136 +7,316 @@
   <meta name="description" content="Teaching" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="img/favicon.ico" />
+
   <style>
     :root{
-      --bg-color:#ffffff; --text-color:#222222;
+      --bg-color:#ffffff;
+      --text-color:#222222;
       --accent-color:#000000;
-      --link-color:#0066cc; --link-hover:#0b5bd3;
-      --border-color:#dddddd; --muted:#777777;
+      --link-color:#0066cc;
+      --link-hover:#0b5bd3;
+      --border-color:#dddddd;
+      --muted:#777777;
     }
+
     @media (prefers-color-scheme: dark){
       :root{
-        --bg-color:#1a1a1a; --text-color:#eeeeee;
+        --bg-color:#1a1a1a;
+        --text-color:#eeeeee;
         --accent-color:#ffffff;
-        --link-color:#8ab4f8; --link-hover:#aecbfa;
-        --border-color:#444444; --muted:#aaaaaa;
+        --link-color:#8ab4f8;
+        --link-hover:#aecbfa;
+        --border-color:#444444;
+        --muted:#aaaaaa;
       }
     }
 
-    html, body { height: 100%; }
+    html, body {
+      height: 100%;
+    }
 
-    /* 상단 여백: PC/모바일 공통 */
     body{
       font-family:'Inter',system-ui,sans-serif;
-      background:var(--bg-color); color:var(--text-color);
+      background:var(--bg-color);
+      color:var(--text-color);
       margin:0;
-      padding: calc(clamp(2rem, 6vh, 7rem) + env(safe-area-inset-top, 0px)) 1rem 2rem;
+      padding:
+        calc(clamp(2rem, 6vh, 7rem) + env(safe-area-inset-top, 0px))
+        1rem
+        2rem;
       display:block;
       min-height:auto;
-      text-align:center; box-sizing:border-box;
+      text-align:center;
+      box-sizing:border-box;
     }
+
     @supports (height: 100svh){
-      @media (max-width: 768px){ body{ min-height:100svh; } }
+      @media (max-width: 768px){
+        body{
+          min-height:100svh;
+        }
+      }
     }
 
-    .container{max-width:680px; width:100%; margin:0 auto;}
+    .container{
+      max-width:680px;
+      width:100%;
+      margin:0 auto;
+    }
 
-    h1{font-size:2rem; margin:.6rem 0; font-weight:600}
-    .subtitle{font-size:1rem; color:var(--accent-color); margin-bottom:1.5rem}
+    h1{
+      font-size:2rem;
+      margin:.6rem 0;
+      font-weight:600;
+    }
+
+    .subtitle{
+      font-size:1rem;
+      color:var(--accent-color);
+      margin-bottom:1.5rem;
+    }
 
     /* 탭 */
-    a{color:var(--link-color); text-decoration:none}
-    a:hover,a:focus{color:var(--link-hover); text-decoration:underline}
-    .links{display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin-bottom:1.5rem}
-    .links a{padding:.35rem .6rem; border:1px solid var(--border-color); border-radius:6px; font-weight:500; transition:background-color .2s}
-    .links a:hover{background-color:var(--border-color)}
-    .links a.disabled{pointer-events:none; cursor:default; opacity:.55; border-style:dashed; text-decoration:none}
+    a{
+      color:var(--link-color);
+      text-decoration:none;
+    }
+
+    a:hover,
+    a:focus{
+      color:var(--link-hover);
+      text-decoration:underline;
+    }
+
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:.5rem;
+      margin-bottom:1.5rem;
+    }
+
+    .links a{
+      padding:.35rem .6rem;
+      border:1px solid var(--border-color);
+      border-radius:6px;
+      font-weight:500;
+      transition:background-color .2s;
+    }
+
+    .links a:hover{
+      background-color:var(--border-color);
+    }
+
+    .links a.disabled{
+      pointer-events:none;
+      cursor:default;
+      opacity:.55;
+      border-style:dashed;
+      text-decoration:none;
+    }
 
     /* 본문 */
-    .section{margin:1.25rem auto 0; max-width:520px; width:100%; text-align:left}
-    .section h2{font-size:1.1rem; color:var(--accent-color); margin:.2rem 0 .8rem}
-    .lead{margin:.2rem 0 1rem; line-height:1.6}
-    blockquote{margin:0 0 .6rem; padding:.75rem 1rem; border-left:3px solid var(--border-color); background:#fafafa}
-    @media (prefers-color-scheme: dark){ blockquote{background:#222} }
-    .card{border:1px solid var(--border-color); border-radius:8px; padding:1rem; margin-bottom:.8rem}
-    .meta{color:var(--muted); font-size:.9rem; margin:.2rem 0 .4rem}
-    ul{margin:.3rem 0 0 1.1rem}
+    .section{
+      margin:1.25rem auto 0;
+      max-width:520px;
+      width:100%;
+      text-align:left;
+    }
 
-    /* ▼ 이미지가 카드 안에서만 보이게: 폭 제한 + 최대 높이 + 자르기 */
-    .course-figure{ margin:.6rem 0 .4rem; border-radius:8px; overflow:hidden; }
+    .section h2{
+      font-size:1.1rem;
+      color:var(--accent-color);
+      margin:.2rem 0 .8rem;
+    }
+
+    .lead{
+      margin:.2rem 0 1rem;
+      line-height:1.6;
+    }
+
+    blockquote{
+      margin:0 0 .6rem;
+      padding:.75rem 1rem;
+      border-left:3px solid var(--border-color);
+      background:#fafafa;
+    }
+
+    @media (prefers-color-scheme: dark){
+      blockquote{
+        background:#222;
+      }
+    }
+
+    .card{
+      border:1px solid var(--border-color);
+      border-radius:8px;
+      padding:1rem;
+      margin-bottom:.8rem;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:.9rem;
+      margin:.2rem 0 .4rem;
+    }
+
+    ul{
+      margin:.3rem 0 0 1.1rem;
+    }
+
+    /* 이미지가 카드 안에서만 보이게 */
+    .course-figure{
+      margin:.6rem 0 .4rem;
+      border-radius:8px;
+      overflow:hidden;
+    }
+
     .course-img{
-      width:100%;              /* 카드 폭에 맞춤 */
-      height:auto;             /* 기본은 비율 유지 */
+      width:100%;
+      height:auto;
       display:block;
     }
-    /* 세로로 너무 긴 원본 보호: 필요하면 최대 높이 제한 + 크롭 */
+
     .course-img.crop{
-      max-height:320px;        /* 원하는 높이로 조절(예: 280~360px) */
-      object-fit:cover;        /* 넘치는 부분은 보기 좋게 잘라냄 */
+      max-height:320px;
+      object-fit:cover;
     }
 
-    footer{margin-top:1.8rem; font-size:.85rem; color:var(--muted)}
+    footer{
+      margin-top:1.8rem;
+      font-size:.85rem;
+      color:var(--muted);
+    }
   </style>
 </head>
+
 <body>
+
   <main class="container">
+
     <h1>Teaching</h1>
 
     <!-- 상단 탭 -->
     <nav class="links" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="Namyeon_Lee_CV.pdf" target="_blank" rel="noopener">CV</a>
-      <a href="teaching.html">Teaching</a>
-      <a href="research.html">Research</a>
-      <a href="https://scholar.google.com/citations?user=e9AxEE4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a
+        href="Namyeon_Lee_CV.pdf"
+        target="_blank"
+        rel="noopener"
+      >
+        CV
+      </a>
+
+      <a href="teaching.html">
+        Teaching
+      </a>
+
+      <a href="research.html">
+        Research
+      </a>
+
+      <a
+        href="https://scholar.google.com/citations?user=e9AxEE4AAAAJ&hl=en"
+        target="_blank"
+        rel="noopener"
+      >
+        Google Scholar
+      </a>
+
+      <a href="writing.html">
+        Writing
+      </a>
+
     </nav>
 
     <!-- Philosophy -->
     <section class="section" aria-labelledby="philosophy">
+
       <blockquote>
         “You teach me, I forget. You show me, I remember. You involve me, I understand.” — E.O. Wilson
       </blockquote>
+
       <p class="lead">
         This quote resonates with how I approach teaching: students learn best when they are actively involved.
         My classes move beyond lectures into real-world projects, client collaborations, and professional simulations.
         Whether students are role-playing a crisis scenario, developing a PR campaign for a local nonprofit,
-        or experimenting with AI tools in research, they learn by doing—building adaptability, creativity, and confidence. <br>
+        or experimenting with AI tools in research, they learn by doing—building adaptability, creativity, and confidence.
+        <br>
         I continually update my courses with current industry practices and emerging technologies so students graduate
         ready for today’s fast-changing communication and media landscape.
       </p>
+
     </section>
 
     <!-- Courses -->
     <section class="section" aria-labelledby="courses">
+
       <h2 id="courses">Current (FL 25)</h2>
 
       <div class="card">
         <strong>Introduction to Public Relations (PRE 2200)</strong>
-        <div class="meta">Foundations, ethics, and trends in public relations</div>
+
+        <div class="meta">
+          Foundations, ethics, and trends in public relations
+        </div>
+
         <ul>
           <li>Covers PR history, principles, theories, and career paths</li>
           <li>Activities: news briefings, crisis simulations, career workshops</li>
-          <li>Group projects: <em>PR in the News</em> and <em>International PR campaigns</em></li>
+          <li>
+            Group projects:
+            <em>PR in the News</em>
+            and
+            <em>International PR campaigns</em>
+          </li>
         </ul>
       </div>
 
       <div class="card">
         <strong>Social Media for Public Relations (PRE 3600)</strong>
-        <div class="meta">Strategic social media in PR, advertising, and marketing</div>
+
+        <div class="meta">
+          Strategic social media in PR, advertising, and marketing
+        </div>
+
         <ul>
           <li>Combines academic theory, case studies, and campaign design</li>
-          <li>Semester-long group project: brand analysis, social media audit, strategy creation, and sample content development</li>
+          <li>
+            Semester-long group project: brand analysis, social media audit,
+            strategy creation, and sample content development
+          </li>
           <li>Trend analysis and influencer marketing discussions</li>
         </ul>
       </div>
 
       <div class="card">
         <strong>Mass Communication Theory and Research (MCM 4360)</strong>
-        <div class="meta">Exploring major media theories and research methods</div>
+
+        <div class="meta">
+          Exploring major media theories and research methods
+        </div>
+
         <ul>
-          <li>Covers key theories such as agenda-setting, framing, and diffusion of innovations</li>
-          <li>Teaches both quantitative and qualitative methods, with attention to ethics in research</li>
-          <li>Includes hands-on projects, AI simulations, and a theory mapping assignment connecting concepts to real-world media issues</li>
+          <li>
+            Covers key theories such as agenda-setting, framing,
+            and diffusion of innovations
+          </li>
+
+          <li>
+            Teaches both quantitative and qualitative methods,
+            with attention to ethics in research
+          </li>
+
+          <li>
+            Includes hands-on projects, AI simulations,
+            and a theory mapping assignment connecting concepts
+            to real-world media issues
+          </li>
         </ul>
       </div>
 
@@ -144,39 +324,75 @@
 
       <div class="card">
         <strong>Public Relations Case Studies (PRE 4090)</strong>
-        <div class="meta">Online course exploring real PR cases</div>
+
+        <div class="meta">
+          Online course exploring real PR cases
+        </div>
+
         <ul>
-          <li>Students analyze situations, evaluate strategies, and propose solutions</li>
-          <li>Interactive discussion and feedback model for engagement</li>
+          <li>
+            Students analyze situations, evaluate strategies,
+            and propose solutions
+          </li>
+
+          <li>
+            Interactive discussion and feedback model for engagement
+          </li>
         </ul>
       </div>
 
       <div class="card">
-        <strong>Public Relations Campaigns (PRE 4600)</strong>
-        <div class="meta">Capstone: client-based professional PR campaigns</div>
 
-        <!-- ▼ 이미지가 카드 안에서만 보이도록 figure + class 적용 -->
+        <strong>Public Relations Campaigns (PRE 4600)</strong>
+
+        <div class="meta">
+          Capstone: client-based professional PR campaigns
+        </div>
+
         <figure class="course-figure">
-          <img src="https://namyeonlee.github.io/img/capstone.png"
-               alt="Students presenting a PR campaign plan book for Hope Alive"
-               class="course-img crop" loading="lazy">
+
+          <img
+            src="https://namyeonlee.github.io/img/capstone.png"
+            alt="Students presenting a PR campaign plan book for Hope Alive"
+            class="course-img crop"
+            loading="lazy"
+          >
+
         </figure>
-        <!-- ▲ 필요 없으면 'crop' 클래스를 빼면 전체 비율로 표시됨 -->
 
         <ul>
-          <li>Students work with real clients to research, design, and present campaigns</li>
-          <li><em>Recent project:</em> partnered with <strong>Hope Alive</strong>, a local nonprofit, to create a health communication campaign addressing substance use</li>
-          <li>Produced a professional plan book combining research, targeted strategies, and deliverables</li>
+          <li>
+            Students work with real clients to research,
+            design, and present campaigns
+          </li>
+
+          <li>
+            <em>Recent project:</em>
+            partnered with <strong>Hope Alive</strong>,
+            a local nonprofit, to create a health communication
+            campaign addressing substance use
+          </li>
+
+          <li>
+            Produced a professional plan book combining research,
+            targeted strategies, and deliverables
+          </li>
         </ul>
+
       </div>
 
     </section>
 
-    <footer>&copy; <span id="year"></span> Namyeon Lee</footer>
+    <footer>
+      &copy; <span id="year"></span> Namyeon Lee
+    </footer>
+
   </main>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
