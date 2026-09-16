@@ -7,107 +7,262 @@
   <meta name="description" content="Research - Namyeon Lee" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="img/favicon.ico" />
+
   <style>
     :root{
-      --bg-color:#ffffff; --text-color:#222222;
+      --bg-color:#ffffff;
+      --text-color:#222222;
       --accent-color:#000000;
-      --link-color:#0066cc; --link-hover:#0b5bd3;
-      --border-color:#dddddd; --muted:#777777;
+      --link-color:#0066cc;
+      --link-hover:#0b5bd3;
+      --border-color:#dddddd;
+      --muted:#777777;
     }
+
     @media (prefers-color-scheme: dark){
       :root{
-        --bg-color:#1a1a1a; --text-color:#eeeeee;
+        --bg-color:#1a1a1a;
+        --text-color:#eeeeee;
         --accent-color:#ffffff;
-        --link-color:#8ab4f8; --link-hover:#aecbfa;
-        --border-color:#444444; --muted:#aaaaaa;
+        --link-color:#8ab4f8;
+        --link-hover:#aecbfa;
+        --border-color:#444444;
+        --muted:#aaaaaa;
       }
     }
 
-    html,body{height:100%}
-    body{
-      font-family:'Inter',system-ui,sans-serif;
-      background:var(--bg-color); color:var(--text-color);
-      margin:0;
-      /* 위/아래 여백 + 노치 대응 */
-      padding: calc(clamp(2rem, 6vh, 7rem) + env(safe-area-inset-top, 0px))
-               1rem
-               calc(3.5rem + env(safe-area-inset-bottom, 0px));
-      display:block; text-align:center; box-sizing:border-box;
+    html, body{
+      height:100%;
     }
 
-    .container{max-width:680px; width:100%; margin:0 auto}
+    body{
+      font-family:'Inter',system-ui,sans-serif;
+      background:var(--bg-color);
+      color:var(--text-color);
+      margin:0;
 
-    h1{font-size:2rem; margin:.6rem 0; font-weight:600}
-    .subtitle{font-size:1rem; color:var(--accent-color); margin-bottom:1.5rem}
+      padding:
+        calc(clamp(2rem, 6vh, 7rem) + env(safe-area-inset-top, 0px))
+        1rem
+        calc(3.5rem + env(safe-area-inset-bottom, 0px));
+
+      display:block;
+      text-align:center;
+      box-sizing:border-box;
+    }
+
+    .container{
+      max-width:680px;
+      width:100%;
+      margin:0 auto;
+    }
+
+    h1{
+      font-size:2rem;
+      margin:.6rem 0;
+      font-weight:600;
+    }
+
+    .subtitle{
+      font-size:1rem;
+      color:var(--accent-color);
+      margin-bottom:1.5rem;
+    }
 
     /* 상단 탭 */
-    a{color:var(--link-color); text-decoration:none}
-    a:hover,a:focus{color:var(--link-hover); text-decoration:underline}
-    .links{display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin-bottom:1.5rem}
-    .links a{padding:.35rem .6rem; border:1px solid var(--border-color); border-radius:6px; font-weight:500; transition:background-color .2s}
-    .links a:hover{background-color:var(--border-color)}
-    .links a.disabled{pointer-events:none; cursor:default; opacity:.55; border-style:dashed; text-decoration:none}
+    a{
+      color:var(--link-color);
+      text-decoration:none;
+    }
 
-    /* 섹션 & 카드 (Teaching과 톤 맞춤) */
-    .section{margin:1.25rem auto 0; max-width:520px; width:100%; text-align:left}
-    .section h2{font-size:1.1rem; color:var(--accent-color); margin:.2rem 0 .8rem}
-    .lead{margin:.2rem 0 1rem; line-height:1.6}
+    a:hover,
+    a:focus{
+      color:var(--link-hover);
+      text-decoration:underline;
+    }
 
-    .card{border:1px solid var(--border-color); border-radius:8px; padding:1rem; margin-bottom:.8rem; background:var(--bg-color)}
-    .meta{color:var(--muted); font-size:.92rem; margin:.2rem 0 0}
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:.5rem;
+      margin-bottom:1.5rem;
+    }
 
-    /* Publications 카드에 왼쪽 포인트 라인 */
+    .links a{
+      padding:.35rem .6rem;
+      border:1px solid var(--border-color);
+      border-radius:6px;
+      font-weight:500;
+      transition:background-color .2s;
+    }
+
+    .links a:hover{
+      background-color:var(--border-color);
+    }
+
+    .links a.disabled{
+      pointer-events:none;
+      cursor:default;
+      opacity:.55;
+      border-style:dashed;
+      text-decoration:none;
+    }
+
+    /* 섹션 & 카드 */
+    .section{
+      margin:1.25rem auto 0;
+      max-width:520px;
+      width:100%;
+      text-align:left;
+    }
+
+    .section h2{
+      font-size:1.1rem;
+      color:var(--accent-color);
+      margin:.2rem 0 .8rem;
+    }
+
+    .lead{
+      margin:.2rem 0 1rem;
+      line-height:1.6;
+    }
+
+    .card{
+      border:1px solid var(--border-color);
+      border-radius:8px;
+      padding:1rem;
+      margin-bottom:.8rem;
+      background:var(--bg-color);
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:.92rem;
+      margin:.2rem 0 0;
+    }
+
+    /* Publications 카드 */
     .pub-card{
       border-left:4px solid var(--link-color);
       box-shadow:0 1px 3px rgba(0,0,0,.05);
     }
-    .pub-card p{margin:0}
-    .pub-card em{font-style:italic}
+
+    .pub-card p{
+      margin:0;
+    }
+
+    .pub-card em{
+      font-style:italic;
+    }
 
     /* Projects 목록 */
-    .projects li{margin-bottom:.45rem}
+    .projects li{
+      margin-bottom:.45rem;
+    }
 
-    .section:last-of-type{margin-bottom:1rem}
-    footer{margin-top:1.8rem; font-size:.85rem; color:var(--muted); padding-bottom:.5rem}
+    .section:last-of-type{
+      margin-bottom:1rem;
+    }
+
+    footer{
+      margin-top:1.8rem;
+      font-size:.85rem;
+      color:var(--muted);
+      padding-bottom:.5rem;
+    }
   </style>
 </head>
+
 <body>
+
   <main class="container">
+
     <h1>Research</h1>
 
-
-    <!-- 탭 -->
+    <!-- 상단 탭 -->
     <nav class="links" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="Namyeon_Lee_CV.pdf" target="_blank" rel="noopener">CV</a>
-      <a href="teaching.html">Teaching</a>
-      <a href="research.html">Research</a>
-      <a href="https://scholar.google.com/citations?user=e9AxEE4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a
+        href="Namyeon_Lee_CV.pdf"
+        target="_blank"
+        rel="noopener"
+      >
+        CV
+      </a>
+
+      <a href="teaching.html">
+        Teaching
+      </a>
+
+      <a href="research.html">
+        Research
+      </a>
+
+      <a
+        href="https://scholar.google.com/citations?user=e9AxEE4AAAAJ&hl=en"
+        target="_blank"
+        rel="noopener"
+      >
+        Google Scholar
+      </a>
+
+      <a href="writing.html">
+        Writing
+      </a>
+
     </nav>
 
     <!-- Overview -->
     <section class="section" aria-labelledby="overview">
-      <h2 id="overview">Overview</h2>
-    
 
-<p class="lead">
-  I am working on the topic of <strong>health and science communication in digital and emerging media</strong>, 
-  because I want to find out <strong>how different ways of presenting information—such as framing, visuals, or source type—affect audience understanding, trust, and decision-making</strong> 
-  so that I can help others to understand <strong>how to design clearer, more trustworthy messages that improve public engagement with complex or uncertain science and health topics</strong>.
-</p>
+      <h2 id="overview">
+        Overview
+      </h2>
+
+      <p class="lead">
+        I am working on the topic of
+        <strong>health and science communication in digital and emerging media</strong>,
+        because I want to find out
+        <strong>
+          how different ways of presenting information—such as framing,
+          visuals, or source type—affect audience understanding,
+          trust, and decision-making
+        </strong>
+        so that I can help others to understand
+        <strong>
+          how to design clearer, more trustworthy messages that improve
+          public engagement with complex or uncertain science and health topics
+        </strong>.
+      </p>
 
     </section>
 
     <!-- Selected Publications -->
     <section class="section" aria-labelledby="pubs">
-      <h2 id="pubs">Selected Publications</h2>
+
+      <h2 id="pubs">
+        Selected Publications
+      </h2>
 
       <article class="card pub-card">
         <p>
-          <strong>Lee, N.</strong>, Hong, Y., Hu, S., Kirkpatrick, C. E., Lee, S., &amp; Hinnant, A. (2024).
-          <a href="https://www.tandfonline.com/doi/abs/10.1080/10810730.2024.2339237" target="_blank" rel="noopener">
-            Exploring the strategic use of TikTok for clinical trial recruitment: How audiences’ prior short-form video usage influences persuasive effects.
+          <strong>Lee, N.</strong>, Hong, Y., Hu, S., Kirkpatrick, C. E.,
+          Lee, S., &amp; Hinnant, A. (2024).
+
+          <a
+            href="https://www.tandfonline.com/doi/abs/10.1080/10810730.2024.2339237"
+            target="_blank"
+            rel="noopener"
+          >
+            Exploring the strategic use of TikTok for clinical trial recruitment:
+            How audiences’ prior short-form video usage influences persuasive effects.
           </a>
+
           <em>Journal of Health Communication</em>.
         </p>
       </article>
@@ -115,62 +270,103 @@
       <article class="card pub-card">
         <p>
           <strong>Lee, N.</strong>, &amp; Lee, S. (2024).
-          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=e9AxEE4AAAAJ&sortby=pubdate&authuser=1&citation_for_view=e9AxEE4AAAAJ:b0M2c_1WBrUC" target="_blank" rel="noopener">
-           Effects of message frames and visual cues on cell-cultured meat communication: Sensation seeking as a moderator.
+
+          <a
+            href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=e9AxEE4AAAAJ&sortby=pubdate&authuser=1&citation_for_view=e9AxEE4AAAAJ:b0M2c_1WBrUC"
+            target="_blank"
+            rel="noopener"
+          >
+            Effects of message frames and visual cues on cell-cultured meat communication:
+            Sensation seeking as a moderator.
           </a>
-            <em>Journal of Science Communication</em>.
+
+          <em>Journal of Science Communication</em>.
         </p>
       </article>
 
       <article class="card pub-card">
         <p>
-          <strong>Lee, N.</strong>, Hong, Y., Hu, S., Kirkpatrick, C. E., Lee, S., &amp; Hinnant, A. (2024).
-          <a href="https://www.sciencedirect.com/science/article/am/pii/S0264410X2400402X" target="_blank" rel="noopener">
-          COVID-19 vaccination communication: Effects of vaccine conspiracy beliefs and message framing among Black and White participants.
+          <strong>Lee, N.</strong>, Hong, Y., Hu, S., Kirkpatrick, C. E.,
+          Lee, S., &amp; Hinnant, A. (2024).
+
+          <a
+            href="https://www.sciencedirect.com/science/article/am/pii/S0264410X2400402X"
+            target="_blank"
+            rel="noopener"
+          >
+            COVID-19 vaccination communication: Effects of vaccine conspiracy beliefs
+            and message framing among Black and White participants.
           </a>
+
           <em>Vaccine</em>.
         </p>
       </article>
+
     </section>
 
     <!-- Current Projects -->
     <section class="section" aria-labelledby="projects">
-      <h2 id="projects">Current Projects</h2>
+
+      <h2 id="projects">
+        Current Projects
+      </h2>
 
       <article class="card">
         <strong>Autonomous Vehicles &amp; Uncertainty</strong>
+
         <ul class="projects">
-          <li>Studying how uncertainty framing and message source affect public attitudes and risk perception</li>
+          <li>
+            Studying how uncertainty framing and message source
+            affect public attitudes and risk perception
+          </li>
         </ul>
       </article>
 
       <article class="card">
         <strong>Physician Warmth &amp; Trust</strong>
+
         <ul class="projects">
-          <li>Exploring how a doctor’s warmth influences perceptions of altruism in clinical trial recruitment</li>
+          <li>
+            Exploring how a doctor’s warmth influences perceptions
+            of altruism in clinical trial recruitment
+          </li>
         </ul>
       </article>
 
       <article class="card">
         <strong>HIV News Imagery &amp; Audience Bias</strong>
+
         <ul class="projects">
-          <li>Investigating how gender representation and prejudice affect responses to HIV news coverage</li>
+          <li>
+            Investigating how gender representation and prejudice
+            affect responses to HIV news coverage
+          </li>
         </ul>
       </article>
 
       <article class="card">
         <strong>Posthumous AI Voices &amp; Video</strong>
+
         <ul class="projects">
-          <li>Examining public trust and ethical concerns around AI-generated recreations of deceased individuals</li>
+          <li>
+            Examining public trust and ethical concerns around
+            AI-generated recreations of deceased individuals
+          </li>
         </ul>
       </article>
+
     </section>
 
-    <footer>&copy; <span id="year"></span> Namyeon Lee</footer>
+    <footer>
+      &copy; <span id="year"></span> Namyeon Lee
+    </footer>
+
   </main>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
