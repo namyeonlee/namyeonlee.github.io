@@ -45,11 +45,6 @@
       box-sizing: border-box;
     }
 
-    html,
-    body {
-      min-height: 100%;
-    }
-
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background-color: var(--bg-color);
@@ -108,32 +103,17 @@
     }
 
     .writing-content {
-      text-align: center;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
     .writing-content p {
       margin: .5rem 0;
     }
 
-    .writing-link {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: .5rem .8rem;
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      font-weight: 500;
-    }
-
-    .writing-link:hover {
-      background-color: var(--border-color);
-    }
-
     .tmi {
       margin-top: 2rem;
       font-size: .9rem;
       color: var(--muted);
-      font-style: italic;
       text-align: center;
     }
 
@@ -192,24 +172,19 @@
 
     <section class="writing-content">
 
-      <h2>Writing</h2>
-
       <p>
-        Personal writing, notes, and occasional thoughts outside academic work.
+        <a
+          href="https://honeycrisps.tistory.com/"
+          target="_blank"
+          rel="noopener"
+        >
+          Read my blog
+        </a>
       </p>
-
-      <a
-        class="writing-link"
-        href="https://honeycrisps.tistory.com/"
-        target="_blank"
-        rel="noopener"
-      >
-        honeycrisps
-      </a>
 
     </section>
 
-    <div class="tmi" id="tmi-box">🍅</div>
+    <div class="tmi">🍅</div>
 
     <footer>
       &copy; <span id="year"></span> Namyeon Lee
