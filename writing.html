@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Writing - Namyeon Lee</title>
+  <meta
+    name="description"
+    content="Personal writing - Namyeon Lee"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="icon" href="img/favicon.ico" />
+
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #222222;
+      --accent-color: #000000;
+      --link-color: #0066cc;
+      --link-hover: #0b5bd3;
+      --border-color: #dddddd;
+      --muted: #777777;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #1a1a1a;
+        --text-color: #eeeeee;
+        --accent-color: #ffffff;
+        --link-color: #8ab4f8;
+        --link-hover: #aecbfa;
+        --border-color: #444444;
+        --muted: #aaaaaa;
+      }
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+
+      padding:
+        calc(clamp(2rem, 6vh, 7rem) + env(safe-area-inset-top, 0px))
+        1rem
+        calc(3.5rem + env(safe-area-inset-bottom, 0px));
+
+      display: block;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .container {
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: .6rem 0;
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    /* 상단 탭 */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .links a {
+      padding: .35rem .6rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background-color .2s;
+    }
+
+    .links a:hover {
+      background-color: var(--border-color);
+    }
+
+    /* Writing content */
+    .section {
+      margin: 1.25rem auto 0;
+      max-width: 520px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .section h2 {
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      margin: .2rem 0 .8rem;
+    }
+
+    .lead {
+      margin: .2rem 0 1rem;
+      line-height: 1.7;
+    }
+
+    .blog-link {
+      display: inline-block;
+      margin-top: .4rem;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: .85rem;
+      color: var(--muted);
+      padding-bottom: .5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <h1>Writing</h1>
+
+    <nav class="links" aria-label="Primary">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a
+        href="Namyeon_Lee_CV.pdf"
+        target="_blank"
+        rel="noopener"
+      >
+        CV
+      </a>
+
+      <a href="teaching.html">
+        Teaching
+      </a>
+
+      <a href="research.html">
+        Research
+      </a>
+
+      <a
+        href="https://scholar.google.com/citations?user=e9AxEE4AAAAJ&hl=en"
+        target="_blank"
+        rel="noopener"
+      >
+        Google Scholar
+      </a>
+
+      <a href="writing.html">
+        Writing
+      </a>
+
+    </nav>
+
+    <section class="section">
+
+      <p class="lead">
+        Outside of my academic work, I keep a personal blog in Korean about
+        everyday life, culture, music, travel, and things I want to remember.
+      </p>
+
+      <a
+        class="blog-link"
+        href="https://honeycrisps.tistory.com/"
+        target="_blank"
+        rel="noopener"
+      >
+        Read my blog →
+      </a>
+
+    </section>
+
+    <footer>
+      &copy; <span id="year"></span> Namyeon Lee
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
