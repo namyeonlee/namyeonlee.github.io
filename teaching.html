@@ -27,7 +27,6 @@
       --link-hover: #0b5bd3;
       --border-color: #dddddd;
       --muted: #777777;
-      --card-bg: #fafafa;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -39,7 +38,6 @@
         --link-hover: #aecbfa;
         --border-color: #444444;
         --muted: #aaaaaa;
-        --card-bg: #222222;
       }
     }
 
@@ -53,30 +51,20 @@
       color: var(--text-color);
       margin: 0;
       padding: 2rem 1rem;
-      line-height: 1.6;
+      min-height: 100vh;
+      text-align: center;
     }
 
     .container {
-      max-width: 760px;
+      max-width: 680px;
+      width: 100%;
       margin: 0 auto;
     }
 
     h1 {
       font-size: 2rem;
-      margin: 0 0 .4rem;
-      text-align: center;
+      margin: .2rem 0 1.5rem;
       font-weight: 600;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      margin-top: 2.2rem;
-      margin-bottom: .8rem;
-    }
-
-    h3 {
-      font-size: 1rem;
-      margin: 0 0 .25rem;
     }
 
     a {
@@ -95,7 +83,6 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: .5rem;
-      margin-bottom: 2.5rem;
     }
 
     .links a {
@@ -103,41 +90,51 @@
       border: 1px solid var(--border-color);
       border-radius: 6px;
       font-weight: 500;
+      transition: background-color .2s ease;
     }
 
     .links a:hover {
       background-color: var(--border-color);
     }
 
-    .intro {
-      margin-bottom: 2rem;
+    .page-content {
+      max-width: 520px;
+      width: 100%;
+      margin: 2rem auto 0;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    .page-content h2 {
+      font-size: 1.1rem;
+      margin: 1.8rem 0 .7rem;
+      font-weight: 600;
+    }
+
+    .page-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .page-content p {
+      margin: 0 0 1rem;
     }
 
     .course {
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 1rem 1.1rem;
-      margin-bottom: .8rem;
-      background-color: var(--card-bg);
+      margin-bottom: 1.2rem;
+    }
+
+    .course strong {
+      font-weight: 600;
     }
 
     .course p {
-      margin: .3rem 0 0;
-    }
-
-    .capstone-image {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 1rem auto 0;
-      border-radius: 8px;
+      margin: .15rem 0 0;
     }
 
     .tmi {
-      margin-top: 2rem;
+      margin-top: 1.4rem;
       font-size: .9rem;
       color: var(--muted);
-      font-style: italic;
       text-align: center;
     }
 
@@ -149,12 +146,8 @@
     }
 
     @media (max-width: 480px) {
-      body {
-        padding: 1.5rem 1rem;
-      }
-
-      h1 {
-        font-size: 1.8rem;
+      .page-content {
+        max-width: 100%;
       }
     }
   </style>
@@ -167,19 +160,22 @@
     <h1>Teaching</h1>
 
     <nav class="links" aria-label="Primary">
-      <a href="index.html">Home</a>
 
-      <a
-        href="Namyeon_Lee_CV.pdf"
-        target="_blank"
-        rel="noopener"
-      >
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="Namyeon_Lee_CV.pdf" target="_blank" rel="noopener">
         CV
       </a>
 
-      <a href="teaching.html">Teaching</a>
+      <a href="teaching.html">
+        Teaching
+      </a>
 
-      <a href="research.html">Research</a>
+      <a href="research.html">
+        Research
+      </a>
 
       <a
         href="https://scholar.google.com/citations?user=e9AxEE4AAAAJ&hl=en"
@@ -189,28 +185,25 @@
         Google Scholar
       </a>
 
-      <a href="writing.html">Writing</a>
+      <a href="writing.html">
+        Writing
+      </a>
+
     </nav>
 
-    <section class="intro">
+    <section class="page-content">
 
-      <h2>Teaching Philosophy</h2>
+      <h2>teaching</h2>
 
       <p>
-        My teaching focuses on helping students connect communication theory
-        with professional practice. I emphasize critical thinking, research,
-        strategic decision-making, and hands-on learning so that students can
-        apply what they learn to real communication problems.
+        My teaching focuses on connecting communication theory with professional
+        practice through research, strategic thinking, and hands-on learning.
       </p>
 
-    </section>
-
-    <section>
-
-      <h2>Courses</h2>
+      <h2>courses</h2>
 
       <div class="course">
-        <h3>PRE 2200 — Introduction to Public Relations</h3>
+        <strong>Introduction to Public Relations</strong>
         <p>
           An introduction to the principles, practices, and professional roles
           of public relations.
@@ -218,40 +211,47 @@
       </div>
 
       <div class="course">
-        <h3>PRE 3600 — Social Media for Public Relations</h3>
+        <strong>Social Media for Public Relations</strong>
         <p>
-          Examines the strategic use of social media for organizations,
-          campaigns, branding, and public engagement.
+          Strategic use of social media for organizations, campaigns, branding,
+          and public engagement.
         </p>
       </div>
 
       <div class="course">
-        <h3>PRE 4090 — Public Relations Case Studies</h3>
+        <strong>Public Relations Case Studies</strong>
         <p>
-          Uses real-world cases to examine strategic communication decisions,
-          challenges, and outcomes.
+          Analysis of real-world public relations cases and strategic
+          communication decisions.
         </p>
       </div>
 
       <div class="course">
-        <h3>PRE 4600 / PRE 4900 — Public Relations Campaigns</h3>
+        <strong>Public Relations Campaigns</strong>
         <p>
-          A capstone experience in which students develop research-based
-          strategic communication campaigns.
+          A capstone course in which students develop research-based strategic
+          communication campaigns.
         </p>
       </div>
 
       <div class="course">
-        <h3>MCM 4360 — Mass Communication Theory and Research</h3>
+        <strong>Mass Communication Theory and Research</strong>
         <p>
-          Introduces major theories and research methods used in mass
-          communication scholarship.
+          An introduction to communication theory, research design, and methods.
+        </p>
+      </div>
+
+      <div class="course">
+        <strong>Publication Design</strong>
+        <p>
+          Principles and practices of visual communication and publication
+          design.
         </p>
       </div>
 
     </section>
 
-    <div class="tmi" id="tmi-box">🍅</div>
+    <div class="tmi">🍅</div>
 
     <footer>
       &copy; <span id="year"></span> Namyeon Lee
