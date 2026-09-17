@@ -27,6 +27,7 @@
       --link-hover: #0b5bd3;
       --border-color: #dddddd;
       --muted: #777777;
+      --card-bg: #fafafa;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -38,6 +39,7 @@
         --link-hover: #aecbfa;
         --border-color: #444444;
         --muted: #aaaaaa;
+        --card-bg: #222222;
       }
     }
 
@@ -106,8 +108,19 @@
       font-size: .95rem;
     }
 
-    .page-content p {
-      margin: 0 0 1rem;
+    .card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem;
+      background-color: var(--card-bg);
+    }
+
+    .card p {
+      margin: 0 0 .9rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
     }
 
     .tmi {
@@ -164,20 +177,25 @@
 
     <section class="page-content">
 
-      <p>
-        Outside of my academic work, I write occasionally about everyday life and things I want to remember.
-        Most of it is in Korean.
-      </p>
+      <div class="card">
 
-      <p>
-        <a
-          href="https://honeycrisps.tistory.com/"
-          target="_blank"
-          rel="noopener"
-        >
-          Read my blog →
-        </a>
-      </p>
+        <p>
+          Outside of academic writing, I occasionally write about everyday life,
+          culture, music, travel, and things I want to remember.
+          Most of it is in Korean.
+        </p>
+
+        <p>
+          <a
+            href="https://honeycrisps.tistory.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            Read my blog →
+          </a>
+        </p>
+
+      </div>
 
     </section>
 
