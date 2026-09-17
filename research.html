@@ -27,6 +27,7 @@
       --link-hover: #0b5bd3;
       --border-color: #dddddd;
       --muted: #777777;
+      --card-bg: #fafafa;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -38,6 +39,7 @@
         --link-hover: #aecbfa;
         --border-color: #444444;
         --muted: #aaaaaa;
+        --card-bg: #222222;
       }
     }
 
@@ -106,22 +108,36 @@
       font-size: .95rem;
     }
 
+    .intro {
+      margin-bottom: 1.5rem;
+    }
+
+    .intro p {
+      margin: 0 0 .8rem;
+    }
+
     .page-content h2 {
       font-size: 1.1rem;
-      margin: 1.6rem 0 .7rem;
+      margin: 1.6rem 0 .8rem;
       font-weight: 600;
     }
 
-    .page-content h2:first-child {
-      margin-top: 0;
+    .card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: .9rem 1rem;
+      margin-bottom: .7rem;
+      background-color: var(--card-bg);
     }
 
-    .page-content p {
-      margin: 0 0 1rem;
+    .card p {
+      margin: 0;
     }
 
-    .publication {
-      margin-bottom: 1rem;
+    .card h3 {
+      font-size: .98rem;
+      margin: 0 0 .25rem;
+      font-weight: 600;
     }
 
     .tmi {
@@ -178,55 +194,91 @@
 
     <section class="page-content">
 
-      <p>
-        My research examines strategic communication at the intersection of
-        health, science, social media, and emerging technologies.
-      </p>
+      <div class="intro">
+        <p>
+          My research examines strategic communication at the intersection of
+          health, science, social media, and emerging technologies.
+        </p>
 
-      <p>
-        I am particularly interested in how message design, source
-        characteristics, visual communication, and audience differences shape
-        information processing and persuasive outcomes.
-      </p>
+        <p>
+          I am particularly interested in how message design, source
+          characteristics, visual communication, and audience differences shape
+          information processing and persuasive outcomes.
+        </p>
+      </div>
 
       <h2>selected publications</h2>
 
-      <div class="publication">
-        Kirkpatrick, C., Hu, S., <strong>Lee, N.</strong>, Hong, Y.,
-        Lee, S., &amp; Hinnant, A. (2025). “I Respect Whatever Decision You
-        Make!” How Autonomy Support and Exemplars in Short-Form Videos
-        Influence Clinical Trial Recruitment.
-        <em>Health Communication</em>.
+      <div class="card">
+        <p>
+          Kirkpatrick, C., Hu, S., <strong>Lee, N.</strong>, Hong, Y.,
+          Lee, S., &amp; Hinnant, A. (2025). “I Respect Whatever Decision You
+          Make!” How Autonomy Support and Exemplars in Short-Form Videos
+          Influence Clinical Trial Recruitment. <em>Health Communication</em>.
+        </p>
       </div>
 
-      <div class="publication">
-        Hu, S., Kirkpatrick, C. E., <strong>Lee, N.</strong>, Hong, Y.,
-        Lee, S., &amp; Hinnant, A. (2024). Using Short-Form Videos to Get
-        Clinical Trial Newcomers to Sign Up: Message-Testing Experiment.
-        <em>Journal of Medical Internet Research, 26</em>, e49600.
+      <div class="card">
+        <p>
+          Hu, S., Kirkpatrick, C. E., <strong>Lee, N.</strong>, Hong, Y.,
+          Lee, S., &amp; Hinnant, A. (2024). Using Short-Form Videos to Get
+          Clinical Trial Newcomers to Sign Up: Message-Testing Experiment.
+          <em>Journal of Medical Internet Research, 26</em>, e49600.
+        </p>
       </div>
 
-      <div class="publication">
-        <strong>Lee, N.</strong>, Hong, Y., Kirkpatrick, C. E., Hu, S.,
-        Lee, S., &amp; Hinnant, A. (2024). COVID-19 vaccination
-        communication: Effects of vaccine conspiracy beliefs and message
-        framing among Black and White participants.
-        <em>Vaccine, 42</em>(13), 3197–3205.
+      <div class="card">
+        <p>
+          <strong>Lee, N.</strong>, Hong, Y., Kirkpatrick, C. E., Hu, S.,
+          Lee, S., &amp; Hinnant, A. (2024). COVID-19 vaccination
+          communication: Effects of vaccine conspiracy beliefs and message
+          framing among Black and White participants.
+          <em>Vaccine, 42</em>(13), 3197–3205.
+        </p>
       </div>
 
-      <div class="publication">
-        <strong>Lee, N.</strong>, &amp; Lee, S. (2024). Effects of message
-        frames and visual cues on cell-cultured meat communication:
-        Sensation seeking as a moderator.
-        <em>Journal of Science Communication, 23</em>(3), A01.
+      <div class="card">
+        <p>
+          <strong>Lee, N.</strong>, &amp; Lee, S. (2024). Effects of message
+          frames and visual cues on cell-cultured meat communication:
+          Sensation seeking as a moderator.
+          <em>Journal of Science Communication, 23</em>(3), A01.
+        </p>
       </div>
 
-      <div class="publication">
-        <strong>Lee, N.</strong>, Hong, Y., Hu, S., Kirkpatrick, C. E.,
-        Lee, S., &amp; Hinnant, A. (2024). Exploring the strategic use of
-        TikTok for clinical trial recruitment: How audiences’ prior short-form
-        video usage influences persuasive effects.
-        <em>Journal of Health Communication, 29</em>(4), 294–306.
+      <div class="card">
+        <p>
+          <strong>Lee, N.</strong>, Hong, Y., Hu, S., Kirkpatrick, C. E.,
+          Lee, S., &amp; Hinnant, A. (2024). Exploring the strategic use of
+          TikTok for clinical trial recruitment: How audiences’ prior
+          short-form video usage influences persuasive effects.
+          <em>Journal of Health Communication, 29</em>(4), 294–306.
+        </p>
+      </div>
+
+      <h2>current projects</h2>
+
+      <div class="card">
+        <h3>Clinical Trial Communication</h3>
+        <p>
+          Message design, source characteristics, trust, and warmth in digital
+          clinical trial recruitment.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Science and Risk Communication</h3>
+        <p>
+          Public responses to uncertainty, source cues, and emerging technologies.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Adaptive Fashion Inclusion</h3>
+        <p>
+          Strategic communication approaches to disability, stigma, and
+          adaptive fashion.
+        </p>
       </div>
 
     </section>
