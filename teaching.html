@@ -53,8 +53,7 @@
       color: var(--text-color);
       margin: 0;
       padding: 2rem 1rem;
-      min-height: 100vh;
-      text-align: center;
+      line-height: 1.6;
     }
 
     .container {
@@ -65,8 +64,21 @@
 
     h1 {
       font-size: 2rem;
-      margin: .2rem 0 1.5rem;
+      margin: .2rem 0;
+      text-align: center;
       font-weight: 600;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-top: 2rem;
+      margin-bottom: .8rem;
+      color: var(--accent-color);
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin: 0 0 .25rem;
     }
 
     a {
@@ -85,6 +97,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: .5rem;
+      margin-top: 1.5rem;
     }
 
     .links a {
@@ -92,84 +105,53 @@
       border: 1px solid var(--border-color);
       border-radius: 6px;
       font-weight: 500;
-      transition: background-color .2s ease;
+      transition:
+        background-color .2s ease,
+        border-color .2s ease;
     }
 
     .links a:hover {
       background-color: var(--border-color);
     }
 
-    .page-content {
+    .quote {
       max-width: 520px;
-      width: 100%;
-      margin: 2rem auto 0;
-      text-align: left;
-      line-height: 1.6;
-      font-size: .95rem;
+      margin: 2.5rem auto 2.8rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    .quote-author {
+      display: block;
+      margin-top: .6rem;
+      font-size: .9rem;
+      font-style: normal;
     }
 
     .intro {
-      margin-bottom: 1.6rem;
+      max-width: 520px;
+      margin: 0 auto;
     }
 
-    .intro p {
-      margin: 0 0 .8rem;
+    .courses {
+      max-width: 520px;
+      margin: 0 auto;
     }
 
-    .quote {
-      color: var(--muted);
-      font-style: italic;
-      margin-top: 1rem;
-    }
-
-    .page-content h2 {
-      font-size: 1.1rem;
-      margin: 1.7rem 0 .8rem;
-      font-weight: 600;
-    }
-
-    .card {
+    .course {
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      padding: .95rem 1rem;
-      margin-bottom: .75rem;
+      padding: 1rem 1.1rem;
+      margin-bottom: .8rem;
       background-color: var(--card-bg);
     }
 
-    .card h3 {
-      font-size: .98rem;
-      margin: 0 0 .3rem;
-      font-weight: 600;
-    }
-
-    .course-code {
-      color: var(--muted);
-      font-size: .85rem;
-      margin-left: .25rem;
-      font-weight: 400;
-    }
-
-    .card p {
-      margin: 0;
-    }
-
-    .course-figure {
-      margin: 1rem 0 0;
-    }
-
-    .course-img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 320px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
-    .course-figure figcaption {
-      margin-top: .45rem;
-      font-size: .8rem;
-      color: var(--muted);
+    .course p {
+      margin: .3rem 0 0;
+      font-size: .95rem;
     }
 
     .tmi {
@@ -187,12 +169,10 @@
     }
 
     @media (max-width: 480px) {
-      .page-content {
+      .quote,
+      .intro,
+      .courses {
         max-width: 100%;
-      }
-
-      .card {
-        padding: .85rem .9rem;
       }
     }
   </style>
@@ -206,9 +186,7 @@
 
     <nav class="links" aria-label="Primary">
 
-      <a href="index.html">
-        Home
-      </a>
+      <a href="index.html">Home</a>
 
       <a
         href="Namyeon_Lee_CV.pdf"
@@ -218,13 +196,9 @@
         CV
       </a>
 
-      <a href="teaching.html">
-        Teaching
-      </a>
+      <a href="teaching.html">Teaching</a>
 
-      <a href="research.html">
-        Research
-      </a>
+      <a href="research.html">Research</a>
 
       <a
         href="https://scholar.google.com/citations?user=e9AxEE4AAAAJ&hl=en"
@@ -234,127 +208,80 @@
         Google Scholar
       </a>
 
-      <a href="writing.html">
-        Writing
-      </a>
+      <a href="writing.html">Writing</a>
 
     </nav>
 
-    <section class="page-content">
+    <section class="quote">
+      “You teach me, I forget. You show me, I remember.
+      You involve me, I understand.”
 
-      <div class="intro">
+      <span class="quote-author">
+        — E. O. Wilson
+      </span>
+    </section>
 
+    <section class="intro">
+
+      <h2>Teaching Philosophy</h2>
+
+      <p>
+        My teaching focuses on helping students connect communication theory
+        with professional practice. I emphasize critical thinking, research,
+        strategic decision-making, and hands-on learning so that students can
+        apply what they learn to real communication problems.
+      </p>
+
+    </section>
+
+    <section class="courses">
+
+      <h2>Courses</h2>
+
+      <div class="course">
+        <h3>PRE 2200 — Introduction to Public Relations</h3>
         <p>
-          My teaching focuses on connecting communication theory with
-          professional practice through research, strategic thinking, and
-          hands-on learning.
-        </p>
-
-        <p>
-          I want students to leave the classroom not only understanding how
-          communication works, but also knowing how to use that knowledge to
-          solve real communication problems.
-        </p>
-
-        <p class="quote">
-          “The real problem of humanity is the following: we have Paleolithic
-          emotions, medieval institutions, and godlike technology.”
-          — E. O. Wilson
-        </p>
-
-      </div>
-
-      <h2>current courses</h2>
-
-      <div class="card">
-        <h3>
-          Introduction to Public Relations
-          <span class="course-code">PRE 2200</span>
-        </h3>
-
-        <p>
-          An introduction to the principles, practices, ethics, and professional
-          roles of public relations.
+          An introduction to the principles, practices, and professional roles
+          of public relations.
         </p>
       </div>
 
-      <div class="card">
-        <h3>
-          Social Media for Public Relations
-          <span class="course-code">PRE 3600</span>
-        </h3>
-
+      <div class="course">
+        <h3>PRE 3600 — Social Media for Public Relations</h3>
         <p>
-          Explores the strategic use of social media for organizations,
-          campaigns, branding, content creation, and public engagement.
+          Examines the strategic use of social media for organizations,
+          campaigns, branding, and public engagement.
         </p>
       </div>
 
-      <div class="card">
-        <h3>
-          Mass Communication Theory and Research
-          <span class="course-code">MCM 4360</span>
-        </h3>
-
+      <div class="course">
+        <h3>PRE 4090 — Public Relations Case Studies</h3>
         <p>
-          Introduces major mass communication theories and research methods,
-          with an emphasis on understanding and evaluating communication
-          research.
+          Uses real-world cases to examine strategic communication decisions,
+          challenges, and outcomes.
         </p>
       </div>
 
-      <h2>past courses</h2>
-
-      <div class="card">
-        <h3>
-          Public Relations Case Studies
-          <span class="course-code">PRE 4090</span>
-        </h3>
-
+      <div class="course">
+        <h3>PRE 4600 — Public Relations Campaigns</h3>
         <p>
-          Uses real-world cases to examine public relations problems, strategic
-          decisions, ethical issues, and campaign outcomes.
+          A capstone experience in which students develop research-based
+          strategic communication campaigns.
         </p>
       </div>
 
-      <div class="card">
-        <h3>
-          Public Relations Campaigns
-          <span class="course-code">PRE 4600</span>
-        </h3>
-
+      <div class="course">
+        <h3>MCM 4360 — Mass Communication Theory and Research</h3>
         <p>
-          A capstone course in which students work with real clients to develop
-          research-based public relations campaigns. In a recent project,
-          students partnered with Hope Alive, a local nonprofit, to develop a
-          health communication campaign addressing substance use.
+          Introduces major theories and research methods used in mass
+          communication scholarship.
         </p>
-
-        <figure class="course-figure">
-
-          <img
-            src="img/capstone.png"
-            alt="Students presenting a public relations campaign plan book for Hope Alive"
-            class="course-img"
-          />
-
-          <figcaption>
-            Student campaign presentation for Hope Alive
-          </figcaption>
-
-        </figure>
-
       </div>
 
-      <div class="card">
-        <h3>
-          Publication Design
-          <span class="course-code">PRE 3450</span>
-        </h3>
-
+      <div class="course">
+        <h3>PRE 3450 — Publication Design</h3>
         <p>
-          Covers principles of visual communication, layout, typography, and
-          publication design.
+          Introduces principles of visual communication and publication design.
         </p>
       </div>
 
