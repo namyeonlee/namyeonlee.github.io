@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
 
   <meta
     name="description"
-    content="Teaching - Namyeon Lee, Assistant Professor of Public Relations at UNC Pembroke"
+    content="Teaching and AI Teaching Resources - Namyeon Lee, Assistant Professor of Public Relations at UNC Pembroke"
   />
 
   <link
@@ -92,6 +93,8 @@
       text-decoration: underline;
     }
 
+    /* Navigation */
+
     .links {
       display: flex;
       flex-wrap: wrap;
@@ -114,6 +117,8 @@
       background-color: var(--border-color);
     }
 
+    /* Quote */
+
     .quote {
       max-width: 520px;
       margin: 2.5rem auto 2.8rem;
@@ -131,17 +136,49 @@
       font-style: normal;
     }
 
+    /* Teaching Introduction */
+
     .intro {
       max-width: 520px;
       margin: 0 auto;
     }
+
+    /* Courses Taught */
 
     .courses {
       max-width: 520px;
       margin: 0 auto;
     }
 
-    .course {
+    .course-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .course-list li {
+      font-size: .95rem;
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .course-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* AI Teaching Resources */
+
+    .resources {
+      max-width: 520px;
+      margin: 2rem auto 0;
+    }
+
+    .resources-intro {
+      font-size: .95rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .resource {
       border: 1px solid var(--border-color);
       border-radius: 8px;
       padding: 1rem 1.1rem;
@@ -149,10 +186,37 @@
       background-color: var(--card-bg);
     }
 
-    .course p {
-      margin: .3rem 0 0;
-      font-size: .95rem;
+    .resource h3 {
+      font-size: 1rem;
+      margin: 0 0 .5rem;
+      font-weight: 600;
     }
+
+    .resource p {
+      font-size: .95rem;
+      margin: .35rem 0 .65rem;
+    }
+
+    .resource-link {
+      display: inline-block;
+      font-size: .9rem;
+      font-weight: 600;
+      margin-top: .3rem;
+    }
+
+    .resource-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .7rem;
+      margin-top: .6rem;
+    }
+
+    .resource-links .resource-link {
+      margin-top: 0;
+    }
+
+    /* Footer */
 
     .tmi {
       margin-top: 1.4rem;
@@ -168,10 +232,13 @@
       text-align: center;
     }
 
+    /* Mobile */
+
     @media (max-width: 480px) {
       .quote,
       .intro,
-      .courses {
+      .courses,
+      .resources {
         max-width: 100%;
       }
     }
@@ -184,6 +251,8 @@
 
     <h1>Teaching</h1>
 
+    <!-- Navigation -->
+
     <nav class="links" aria-label="Primary">
 
       <a href="index.html">Home</a>
@@ -191,7 +260,7 @@
       <a
         href="Namyeon_Lee_CV.pdf"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         CV
       </a>
@@ -203,7 +272,7 @@
       <a
         href="https://scholar.google.com/citations?user=e9AxEE4AAAAJ&hl=en"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         Google Scholar
       </a>
@@ -212,78 +281,209 @@
 
     </nav>
 
+    <!-- Quote -->
+
     <section class="quote">
+
       “You teach me, I forget. You show me, I remember.
       You involve me, I understand.”
 
       <span class="quote-author">
         — E. O. Wilson
       </span>
+
     </section>
+
+    <!-- Teaching Introduction -->
 
     <section class="intro">
 
       <p>
-        My teaching focuses on helping students connect communication theory
-        with professional practice. I emphasize critical thinking, research,
-        strategic decision-making, and hands-on learning so that students can
-        apply what they learn to real communication problems.
+        My teaching focuses on helping students connect
+        communication theory with professional practice.
+        I emphasize critical thinking, research, strategic
+        decision-making, and hands-on learning so that
+        students can apply what they learn to real
+        communication problems.
       </p>
 
     </section>
 
+    <!-- Courses Taught -->
+
     <section class="courses">
 
-      <h2>Courses</h2>
+      <h2>Courses Taught</h2>
 
-      <div class="course">
-        <h3>PRE 2200 — Introduction to Public Relations</h3>
+      <ul class="course-list">
+
+        <li>
+          PRE 2200 — Introduction to Public Relations
+        </li>
+
+        <li>
+          PRE 3600 — Social Media for Public Relations
+        </li>
+
+        <li>
+          PRE 4090 — Public Relations Case Studies
+        </li>
+
+        <li>
+          PRE 4600 — Public Relations Campaigns
+        </li>
+
+        <li>
+          MCM 4360 — Mass Communication Theory and Research
+        </li>
+
+        <li>
+          PRE 3450 — Publication Design
+        </li>
+
+      </ul>
+
+    </section>
+
+    <!-- AI Teaching Resources -->
+
+    <section class="resources">
+
+      <h2>AI Teaching Resources</h2>
+
+      <p class="resources-intro">
+        I develop AI-assisted teaching tools to make
+        learning more interactive and engaging.
+        Below are selected resources I have created
+        and used in my communication courses,
+        shared with fellow educators for inspiration
+        and adaptation.
+      </p>
+
+      <!-- Resource 1: Interactive Exam Review Games -->
+
+      <div class="resource">
+
+        <h3>Interactive Exam Review Games</h3>
+
         <p>
-          An introduction to the principles, practices, and professional roles
-          of public relations.
+          <strong>Purpose:</strong>
+          Reinforce key concepts through active recall
+          and collaborative learning.
         </p>
+
+        <p>
+          <strong>Classroom Use:</strong>
+          Students compete in teams using
+          Jeopardy-style questions to review
+          course material before exams.
+        </p>
+
+        <p>
+          <strong>Adaptation:</strong>
+          Instructors can customize questions
+          and categories for different courses
+          using the source code.
+        </p>
+
+        <div class="resource-links">
+
+          <a
+            class="resource-link"
+            href="https://namyeonlee.github.io/pr-midterm-review/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Try the Tool &rarr;
+          </a>
+
+          <span aria-hidden="true">|</span>
+
+          <a
+            class="resource-link"
+            href="https://github.com/namyeonlee/pr-midterm-review"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Code &rarr;
+          </a>
+
+        </div>
+
       </div>
 
-      <div class="course">
-        <h3>PRE 3600 — Social Media for Public Relations</h3>
+      <!-- Resource 2: ICYMI -->
+
+      <div class="resource">
+
+        <h3>ICYMI: PR &amp; Social Media News</h3>
+
         <p>
-          Examines the strategic use of social media for organizations,
-          campaigns, branding, and public engagement.
+          <strong>Purpose:</strong>
+          Connect course concepts with current
+          industry developments.
         </p>
+
+        <p>
+          <strong>Classroom Use:</strong>
+          Students explore weekly PR and social media
+          news and discuss its implications for
+          strategic communication.
+        </p>
+
+        <p>
+          <strong>Adaptation:</strong>
+          Can be adapted to other disciplines by
+          changing the news topics and discussion
+          prompts.
+        </p>
+
+        <div class="resource-links">
+
+          <a
+            class="resource-link"
+            href="https://icymi-pr-weekly.nmpeony.chatgpt.site/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Try the Tool &rarr;
+          </a>
+
+        </div>
+
       </div>
 
-      <div class="course">
-        <h3>PRE 4090 — Public Relations Case Studies</h3>
-        <p>
-          Uses real-world cases to examine strategic communication decisions,
-          challenges, and outcomes.
-        </p>
-      </div>
+      <!-- Resource 3: Classroom Activities -->
 
-      <div class="course">
-        <h3>PRE 4600 — Public Relations Campaigns</h3>
-        <p>
-          A capstone experience in which students develop research-based
-          strategic communication campaigns.
-        </p>
-      </div>
+      <div class="resource">
 
-      <div class="course">
-        <h3>MCM 4360 — Mass Communication Theory and Research</h3>
-        <p>
-          Introduces major theories and research methods used in mass
-          communication scholarship.
-        </p>
-      </div>
+        <h3>AI-Assisted Classroom Activities</h3>
 
-      <div class="course">
-        <h3>PRE 3450 — Publication Design</h3>
         <p>
-          Introduces principles of visual communication and publication design.
+          <strong>Purpose:</strong>
+          Encourage participation and
+          applied learning.
         </p>
+
+        <p>
+          <strong>Classroom Use:</strong>
+          Interactive activities and survey-based
+          exercises help students apply
+          communication concepts and discuss
+          their responses.
+        </p>
+
+        <p>
+          <strong>Adaptation:</strong>
+          Activities can be modified for different
+          learning objectives and classroom settings.
+        </p>
+
       </div>
 
     </section>
+
+    <!-- Footer -->
 
     <div class="tmi">💙</div>
 
